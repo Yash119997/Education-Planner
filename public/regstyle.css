@@ -1,0 +1,37 @@
+body{
+    background-color: green;
+}
+.centered-form{
+	margin-top: 60px;
+}
+
+.regg{
+  background-color:#cbf1f5;
+  width: 40%;
+  margin: auto;
+
+  padding-bottom: 40px;
+  box-shadow: 0 0 10px #000;
+
+
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #242320;
+  color: white;
+  text-align: center;
+}
+button{
+
+  align-self: center;
+}
+@media only screen and (max-width: 572px) {
+  /* For mobile phones: */
+  .regg{
+    width:80%;
+    margin:0 12% 18% 12%;
+  }
+}

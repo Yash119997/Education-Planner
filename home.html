@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="homestyle.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="homestyle.css">
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="head" style="background: #a8ff78; text-align: center;/* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ">
+    <h1 class="name">
+      <img src="book2.jfif" alt="" height="75">
+      Education Planner
+    </h1>
+
+    <div class="logout">
+      <a href="/logout" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+    </div>
+  </div>
+  </div>
+  <section id="tabs" style=";text-align:center;margin-top:50px;margin-bottom:10%">
+    <div class="d-flex flex-column justify-content-center" style="box-shadow: 0 0 10px #000;width:70%;text-align:center;background-color:#a4d6ef;margin:auto;min-height: 500px;">
+
+
+      <div class="container d-flex justify-content-center" style="text-align:center">
+
+        <div class="row d-flex justify-content-center" style="text-align:center">
+          <div class="col-xs-12 ">
+            <nav style="text-align:center" class="d-flex justify-content-center">
+              <div class="nav nav-tabs nav-fill navtab" id="nav-tab" role="tablist" style="display:flex;align-items:center">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">College-Finder</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">PLACES NEAR-BY</a>
+                <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Study-Material</a>
+              </div>
+            </nav>
+
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="tab-content py-3 px-3 px-sm-0  d-flex justify-content-center" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <strong>ENTER MARKS:</strong>
+          <form action="#" id="mkform">
+            <div class="form-group row" style="text-align:center">
+              <div class="form-group col-sm-12 ">
+                <label for="">PHYSICS:</label></br>
+                <input type="number" class="form-control ph" placeholder="(1-100)" id="" name="physics" min="1" max="100" required>
+              </div>
+              <div class="form-group col-sm-12 ">
+                <label for="">CHEMISTRY:</label></br>
+                <input type="number" class="form-control ch" placeholder="(1-100)" id="" name="chemistry" min="1" max="100" required>
+              </div>
+              <div class="form-group col-sm-12 ">
+                <label for="">MATHS:</label></br>
+                <input type="number" class="form-control ma" placeholder="(1-100)" id="" name="maths" min="1" max="100" required>
+              </div>
+            </div>
+
+
+
+
+
+            <br />
+
+            <button type="submit" formmethod="post" formaction="/home.html" class="btn-lg btn-primary">FIND COLLEGE</button>
+          </form>
+        </div>
+
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               SELECT THE COLLEGE
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu d1" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item c" href="#">The Maharaja Sayajirao University of Baroda</a>
+              <a class="dropdown-item c" href="#">Sardar Vallabhbhai Patel Institute of Technology</a>
+              <a class="dropdown-item c" href="#">Parul Institute Of Technology,vadodara</a>
+              <a class="dropdown-item c" href="#">Babaria Institute of Technology,vadodara</a>
+              <a class="dropdown-item c" href="#">ITM Universe, Vadodara </a>
+              <a class="dropdown-item c" href="#">Neotech Institute of Technology Vadodara</a>
+              <a class="dropdown-item c" href="#">K. J. Institute of Engineering & Technology</a>
+              <a class="dropdown-item c" href="#">Vadodara Institute of Engineering</a>
+              <a class="dropdown-item c" href="#">Sigma Institute of Engineering,vadodara</a>
+            </div>
+          </div>
+          <br>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               SELECT THE PLACE TYPE
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu d2" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item d" href="#">Arts and Entertainment</a>
+              <a class="dropdown-item d" href="#">Food</a>
+              <a class="dropdown-item d" href="#">Parks and Outdoors</a>
+              <a class="dropdown-item d" href="#">Pharmacy</a>
+              <a class="dropdown-item d" href="#">hospital </a>
+              <a class="dropdown-item d" href="#">Shopping Center</a>
+              <a class="dropdown-item d" href="#">Hostel</a>
+              <a class="dropdown-item d" href="#">Bus Station</a>
+            </div>
+          </div>
+            <form action="/nearb" method="post">
+              <div class="form-group">
+                <br>
+
+            <label for="exampleInput1">Selected College:</label>
+            <input type="text" name="place" class="form-control" id="exampleInput1" required readonly>
+
+          </div>
+          <div class="form-group">
+            <label for="t2">Selected Category:</label>
+            <input type="text" name="category" class="form-control t2" id="t2" required readonly>
+            <br>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        </div>
+        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+          <strong>THIS SECTION WILL PROVIDE YOU WITH STUDY MATERIAL LINKS FROM ALL IMPORTANT SOURCES.<br />
+            IT WILL BE UPDATED SOON</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ./Tabs -->
+  <footer>
+    <P style="text-align:center;">
+      &copy; CREATED BY:ANGEL CHRISTIAN
+    </P>
+  </footer class="foot">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+  <script src="homej.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>AdminEdit</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+</head>
+
+<body style="background-color:green">
+  <div class="flex-container" style="margin:10%;margin-top:50px; background-color:#cbf1f5;box-shadow: 0 0 10px #000;">
+    <form action="/eset" method="post" role="form">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Details</h4>
+        <a href="/admincancel"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times</button></a>
+      </div>
+      <% if(cdata){ %>
+      <div class="modal-body">
+        <input type="hidden" name="_id" id="_id" value="<%=cdata._id%>" >
+        <div class="form-group">
+          <label>College Name</label>
+          <input type="text" name="cname" id="cname" class="form-control" value="<%=cdata.cname%>" required>
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" name="ccity" class="form-control" value="<%=cdata.ccity%>"required>
+        </div>
+        <div class="form-group">
+          <label>Cut-off</label><br />
+          <input type="number" name="cutoff" min="0" max="100" step="1"value="<%=cdata.cutoff%>" required>
+        </div>
+        <div class="form-group">
+          <label>Ratings</label><br />
+          <input type="number" name="ratings" id="uratings" min="0" max="10" step="1"  value="<%=cdata.ratings%>" required>
+        </div>
+        <div class="form-group">
+          <label>Fees/year</label><br />
+          <input type="number" name="fees" min="1" value="<%=cdata.fees%>"required>
+        </div>
+        <div class="custom-file form-group">
+          <label> Images(provide the new links to image)</label><br />
+          1)<input type="text" name="image1" value="<%=cdata.image[0]%>" required><br>
+          2)<input type="text" name="image2" value="<%=cdata.image[1]%>" required><br>
+          3)<input type="text" name="image3" value="<%=cdata.image[2]%>" required><br>
+        </div>
+      </div>
+      <% } %>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-info" value="Update">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

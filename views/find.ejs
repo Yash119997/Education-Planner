@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/findstyle.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>college</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:green;">
+
+  <div class="" style="background: #a8ff78;background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);background: linear-gradient(to right, #78ffd6, #a8ff78);">
+    <h1 style="margin-top:0px">
+      <img src="book2.jfif" alt="" height="75">
+      Education Planner
+    </h1>
+  </div>
+  <div class="logout">
+    <a href="/logout" class="btn btn-info btn-lg">
+      <span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+  </div>
+  <h1 style="color: #ff7900;font-size: 40px;font-weight: 700">YOUR PERCENTAGE IS <%= percen %></h1>
+  <p style="color: black;font-size: 30px;font-weight: 700"><strong>You may be eligible for the following colleges:</strong></p>
+  <div class="flex-container">
+
+
+    <% {list.forEach(function(cdata){ %>
+    <div class=" container list" style="margin:10px;margin-bottom: 40px;width:430px;box-shadow: 0 0 10px #000;">
+      <div class="container" style="margin-top: 20px;width: 550px;">
+        <h2 style="margin-top:5px"> <%= cdata.cname %>,<%= cdata.ccity %></h2>
+        <div id="<%= cdata.cname %>" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#<%= cdata.cname %>" data-slide-to="0" class="active"></li>
+            <li data-target="#<%= cdata.cname %>" data-slide-to="1"></li>
+            <li data-target="#<%= cdata.cname %>" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="<%=cdata.image[0] %>" alt="College image" style="width:100%;height:180px;">
+            </div>
+
+            <div class="item">
+              <img src="<%=cdata.image[1] %>" alt="College image" style="width:100%;height:180px">
+            </div>
+
+            <div class="item">
+              <img src="<%=cdata.image[2] %>" alt="College image" style="width:100%;height:180px">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#<%= cdata.cname %>" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#<%= cdata.cname %>" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="tablee">
+          <table align="center">
+
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td style="padding: 0px 20px 5px 0px" class="data"><span>&#8377;</span><%= cdata.fees %></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0px 20px 5px 0px" class="data2">Fees/year</td>
+                  </tr>
+
+                </table>
+              </td>
+              <td>
+                <table>
+
+                  <tr>
+                    <td style="padding: 0px 0px 0px 20px" class="data"><%= cdata.ratings %>/10</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 5px 0px 5px 20px" class="data2"><i class="fa fa-star"></i>Ratings</td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <% });} %>
+  </div>
+
+  <footer>
+    <P style="text-align:center;margin-bottom: 0px;padding-top:8px;padding-bottom:8px;">
+      &copy; CREATED BY:ANGEL CHRISTIAN
+    </P>
+  </footer class="foot">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="adminstyle.css">
+  <link rel="icon" href="logo.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+</head>
+
+<body style="background-color:green">
+  <div class="content">
+
+    <div class="container">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="">
+              <h2>Manage <b>DATA</b></h2>
+            </div>
+            <div class="logout">
+              <a href="/logout" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+              </a>
+            </div>
+            <div class="">
+              <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add </span></a>
+            </div>
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+
+
+          <table class="table table-striped table-hover" style="">
+            <thead>
+              <tr>
+
+                <th>College Name</th>
+                <th>City</th>
+                <th>Cut-off</th>
+                <th>Ratings</th>
+                <th>Fees/year</th>
+                <th>Image upload</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% {list.forEach(function(cdata){ %>
+              <tr>
+
+                <td><%= cdata.cname %></td>
+                <td><%= cdata.ccity %></td>
+                <td><%= cdata.cutoff %></td>
+                <td><%= cdata.ratings %></td>
+                <td><%= cdata.fees %></td>
+                <td><img style="margin:10px" src="<%= cdata.image[0] %>"  width="50" height="60"><img style="margin:10px" src="<%= cdata.image[1] %> "  width="50" height="60"><img style="margin:10px" src="<%= cdata.image[2] %>"  width="50" height="60"></td>
+                <td>
+                  <a href="/adminupdate/<%= cdata._id %>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a href="/admindelete/<%= cdata._id %>" class="delete" id="del" onclick="return confirm('THIS WILL WEB DELETED FOREVER,ARE YOU SURE');"data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+              </tr>
+              <% });} %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- add Modal HTML -->
+    <div id="addEmployeeModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/adminadd" method="post" enctype="multipart/form-data">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Details</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>College Name</label>
+                <input type="text" name="cname" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" name="ccity" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Cut-off</label><br />
+                <input type="number" name="cutoff" min="0" max="100" step="1" required>
+              </div>
+              <div class="form-group">
+                <label>Ratings</label><br />
+                <input type="number" name="ratings" id="number" min="0" max="10" step="1" placeholder="0-10" required>
+              </div>
+              <div class="form-group">
+                <label>Fees/year</label><br />
+                <input type="number" name="fees" min="1" required>
+              </div>
+              <div class="custom-file form-group">
+                <label>choose 3 images</label><br />
+                <input type="file" class="custom-file-input" id="custom" name="file" multiple required>
+                <label class="custom-file-label" for="customFile"></label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+              <input type="submit" class="btn btn-success" value="Add">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <P style="text-align:center;">
+        &copy; CREATED BY:ANGEL CHRISTIAN
+      </P>
+    </footer class="foot">
+  </div>
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+  <script type="text/javascript">
+    $(window).on("load", function() {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+  </script>
+
+</body>
+
+</html>

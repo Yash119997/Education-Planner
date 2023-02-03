@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="nearbystyle.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <title>NEAR-BY PLACES</title>
+</head>
+
+<body style="background-color:green">
+  <div class="t">
+  <div class="" style="background: #a8ff78;text-align: center;/* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+    <h1>
+      <img src="book2.jfif" alt="" height="75">
+      Education Planner
+    </h1>
+  </div>
+  <div class="logout">
+    <a href="/logout" class="btn btn-info btn-lg">
+      <span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+  </div>
+  <div class="container">
+    <br />
+
+  <h2>
+  PLACES ARE AS FOLLOWS:
+  </h2>
+<div id="mapid"></div>
+  <script>
+    var mymap = L.map('mapid').setView([<%=lat%>,<%=lng%>], 12);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'sk.eyJ1IjoiYW5nZWxjaHJpc3RpYW4iLCJhIjoiY2tjN3o4OGNjMTY0cjJ4bnY1cjZnYTJzdiJ9.0CilClb_T6IobTXAixhUZw'
+}).addTo(mymap);
+
+<% {list.forEach(function(cdata){ %>
+  var marker = L.marker([<%=cdata.location.y%>,<%=cdata.location.x%>]).addTo(mymap);
+   marker.bindPopup("<b><%=cdata.attributes.PlaceName%></b>").openPopup();
+<% });} %>
+var marker = L.marker([<%=lat%>,<%=lng%>]).addTo(mymap);
+marker.bindPopup("<b>THIS IS YOUR</b><br><b>SELECTED COLLEGE</b>").openPopup();
+  </script>
+
+
+  <div class="flex-container place">
+
+
+  <div class="table-responsive" style="margin-bottom: 50px;">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>PLACE NAME</th>
+          <th>PLACE ADDRESS</th>
+          <th>TYPE</th>
+          <th>PHONE</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% {list.forEach(function(cdata){ %>
+        <tr>
+          <td><%=cdata.attributes.PlaceName%></td>
+          <td><%=cdata.attributes.Place_addr%></td>
+          <td><%=cdata.attributes.Type%></td>
+          <td><%=cdata.attributes.Phone%></td>
+        </tr>
+        <% });} %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+<footer>
+  <P style="text-align:center;color: white;">
+    &copy; CREATED BY:ANGEL CHRISTIAN
+  </P>
+</footer class="foot">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

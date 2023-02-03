@@ -1,0 +1,129 @@
+ body{
+  background-color: #cbf1f5;
+  margin-top: 0;
+  margin-left: 0;
+    margin-bottom: 100px;
+    overflow-y: auto
+
+}
+.t{
+    margin-top: 0;
+    background-color: green;
+    display: block;
+    text-align: center;
+
+    width: 100%;
+}
+h1{
+    margin: 0;
+}
+
+.login{
+  background-color:#cbf1f5;
+  width: 30%;
+box-shadow: 0 0 10px #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+}
+.register{
+  text-align: center;
+
+}
+p{
+  color: blue;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+html{
+  /* overflow: scroll; */
+  overflow-y: auto;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #242320;
+  color: white;
+  text-align: center;
+}
+.flex-container{
+  display: flex;
+  flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+    text-align: center;
+}
+.card{
+  margin-top: 35px;
+  margin-bottom: 35px;
+  display: flex
+}
+.card:hover {
+  background-color: #1F1B24;
+  color: white;
+}
+
+@media only screen and (max-width: 1150px) {
+
+
+.flex-container .find{
+  display: flex;
+  order: 2;
+  align-self: center;
+  justify-content:center;
+  width: 75%;
+  text-align: center;
+}
+.flex-container .login{
+  order: 1;
+  display: flex;
+  justify-content:center;
+  align-self: center;
+
+}
+.flex-container .near{
+  display: flex;
+  order: 3;
+  align-self: center;
+  text-align: center;
+}
+ .study{
+   display: flex;
+justify-content:center;
+  align-self: center;
+  text-align: center;
+}
+
+.login{
+
+
+  width: 75%;
+}
+.flex-container{
+display: flex;
+flex-direction: column;
+justify-content:center;
+
+text-align:center;
+align-self: center;
+
+
+}
+}
